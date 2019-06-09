@@ -42,7 +42,7 @@ class VKOAuth2Adapter(OAuth2Adapter):
                             params={'access_token': token.token,
                                     'fields': ','.join(USER_FIELDS),
                                     'user_ids': uid,
-                                    'v': 3})
+                                    'v': '5.89'})
         resp.raise_for_status()
         extra_data = resp.json()['response'][0]
         email = kwargs['response'].get('email')
