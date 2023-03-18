@@ -12,6 +12,8 @@ class GoogleOAuth2Adapter(OAuth2Adapter):
     access_token_url = 'https://accounts.google.com/o/oauth2/token'
     authorize_url = 'https://accounts.google.com/o/oauth2/auth'
     profile_url = 'https://www.googleapis.com/oauth2/v1/userinfo'
+    redirect_uri_protocol = 'https'
+
 
     def complete_login(self, request, app, token, **kwargs):
         resp = requests.get(self.profile_url,
