@@ -63,7 +63,7 @@ class JSONField(JSONFieldBase):
 
     def value_from_object(self, obj):
         """Return value dumped to string."""
-        return getattr(obj, self.attname)
+        return json.dumps(getattr(obj, self.attname))
 
 
 try:
